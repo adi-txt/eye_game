@@ -4,6 +4,7 @@
 # folders
 venv/
 __pycache__/
+images/
 
 # image files
 *.jpg
