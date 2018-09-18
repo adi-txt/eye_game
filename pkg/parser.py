@@ -1,16 +1,19 @@
-from .functions import get_eye_direction, image_pre_processing
-from .direction import get_direction, get_result
-from .imageprocessing import (
-    pil_to_cv,
-    cv2_to_pil,
-    pil_to_face_recognition,
-    face_recognition_to_pil,
-    cv2_to_face_recognition,
-)
-
+'''
+This is where actual gaze direction parsing occurs.
+'''
 import cv2
 
+from .functions import get_eye_direction, image_pre_processing
+from .direction import get_direction, get_result
+
+
 def get_eyeball_direction(image_path):
+    '''
+    This utilizes various functions from functions.py and
+    direction.py to get the gaze direction of a human
+    subject in an image present at the given image path
+    '''
+    #pylint: disable=no-member
     cv_img_array = cv2.imread(image_path)
 
     try:
@@ -29,10 +32,8 @@ def get_eyeball_direction(image_path):
                 result[3]
             )
             return get_result(direction_result)
+        return "no face detected"
 
-        else:
-            return "no face detected"
-
-    except AttributeError as e:
-        print(e)
+    except AttributeError as error:
+        print(error)
         return "image read error, please check your image path"
