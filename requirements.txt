@@ -1,0 +1,7 @@
+opencv-python==3.4.3.18
+Pillow==5.2.0
+numpy==1.15.1
+face-recognition==1.2.3
+face-recognition-models==0.3.0
+dlib==19.15.0
+click==6.7

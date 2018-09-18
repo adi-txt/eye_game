@@ -1,0 +1,10 @@
+# macOS trash
+.DS_Store
+
+# folders
+venv/
+__pycache__/
+
+# image files
+*.jpg
+*.png
