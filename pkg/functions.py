@@ -141,7 +141,7 @@ def get_eye_rectangle_coordinates(eye_landmarks):
     return {"x1": x_1, "y1": y_1, "x2": x_1 + width, "y2": y_1 + height}
 
 def get_eyeball_location(cv_image_array, eye_coordinate):
-    """
+    '''
     This function returns the position of the eyeball in the
     eye rectangle. It takes in a image read by OpenCV, the
     coordinates returned by get_eye_rectangle_coordinates(), and
@@ -149,7 +149,7 @@ def get_eyeball_location(cv_image_array, eye_coordinate):
     position of the eyeball to the total. It also returns the coordinates
     to the pupil of the eyeball, and the position of the pupil
     via get_eye_rectangle_coordinates()
-    """
+    '''
 
     eyeball_roi = cv_image_array[
         eye_coordinate["y1"]:eye_coordinate["y2"],
