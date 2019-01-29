@@ -1,16 +1,17 @@
-'''
+"""
 This is where the overall program is run.
-'''
+"""
 import os
 
 from pkg.parser import get_eyeball_direction
 
-def main() -> None:
-    '''
-    This is the main function
-    '''
 
-    path_to_images = os.path.join(os.getcwd(), 'images/')
+def main() -> None:
+    """
+    This is the main function
+    """
+
+    path_to_images = os.path.join(os.getcwd(), "images/")
     filenames = os.listdir(path_to_images)
 
     if filenames:
@@ -20,18 +21,15 @@ def main() -> None:
             # print(file_path)
             try:
                 direction = get_eyeball_direction(file_path)
-            except: #pylint: disable=bare-except
+            except:  # pylint: disable=bare-except
                 direction = "opencv cannot find eyeballs"
 
             print(
-                "Image submitted: {0}, Eyeball direction: {1}".format(
-                    file,
-                    direction
-                )
+                "Image submitted: {0}, Eyeball direction: {1}".format(file, direction)
             )
     else:
         print("No images submitted")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
